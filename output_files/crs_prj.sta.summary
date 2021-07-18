@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -21.475
+TNS   : -388.905
+
+Type  : Slow Model Setup 'control_Unit:CU|prescaler:motor_ps|clk_10'
+Slack : -0.023
+TNS   : -0.046
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -2.691
+TNS   : -2.691
+
+Type  : Slow Model Hold 'control_Unit:CU|prescaler:motor_ps|clk_10'
+Slack : 0.217
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.631
+TNS   : -118.943
+
+Type  : Slow Model Minimum Pulse Width 'control_Unit:CU|prescaler:motor_ps|clk_10'
+Slack : -0.611
+TNS   : -4.888
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -7.981
+TNS   : -106.335
+
+Type  : Fast Model Setup 'control_Unit:CU|prescaler:motor_ps|clk_10'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.721
+TNS   : -1.721
+
+Type  : Fast Model Hold 'control_Unit:CU|prescaler:motor_ps|clk_10'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -97.380
+
+Type  : Fast Model Minimum Pulse Width 'control_Unit:CU|prescaler:motor_ps|clk_10'
+Slack : -0.500
+TNS   : -4.000
+
+------------------------------------------------------------

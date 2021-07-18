@@ -1,0 +1,19 @@
+module top(
+	input CLOCK_50,
+	input	[3:0] KEY,
+	
+	inout [35:0] GPIO_1
+);
+
+wire [3:0] f;
+wire 		  clk;
+wire 		  rst;
+
+assign clk = CLOCK_50;
+assign rst = ~KEY[0];
+
+
+assign GPIO_1[3:0] = f[3:0];
+
+
+endmodule

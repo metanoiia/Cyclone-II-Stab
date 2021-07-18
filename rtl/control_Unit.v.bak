@@ -1,0 +1,55 @@
+module control_Unit(	
+	input  CLOCK_50,
+	input	[3:0] KEY,
+	
+	inout [35:0] GPIO_1
+);
+	
+wire f0,f1,f2,f3;
+wire clk;
+wire rst;
+
+assign clk = CLOCK_50;
+assign rst = ~KEY[0];
+
+
+assign GPIO_1[0] = f0;
+assign GPIO_1[1] = f1;
+assign GPIO_1[2] = f2;
+assign GPIO_1[3] = f3;
+
+reg 		 rot_dir;
+reg       rot_en;
+reg [2:0] set_rate;
+wire 		 clk_driver;
+
+always @ ( posedge clk )
+begin
+	if ( rst )
+	begin
+		rot_dir  <= 1'b0;
+		rot_en   <= 1'b1;
+		set_rate <= 3'b111;
+	end
+end
+
+prescaler motor_ps(
+.clk			(	clk 		 ),
+.rst			( rst			 ),
+.set_rate	( set_rate 	 ),
+.clk_driver ( clk_driver )
+);
+
+fs_motor motor(
+.clk		 ( clk_driver ),
+.rst		 ( rst		  ),
+.rot_en   ( rot_en     ),
+.rot_dir  ( rot_dir    ),
+.f0		 ( f0         ),
+.f1		 ( f1		     ),
+.f2		 ( f2		     ),
+.f3		 ( f3 		  ),
+);
+	
+
+endmodule

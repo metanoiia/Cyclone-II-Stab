@@ -1,0 +1,706 @@
+Analysis & Synthesis report for crs_prj
+Thu Jun 10 10:53:38 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: SPI_MASTER:spi_tr
+ 13. Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod6
+ 14. Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod5
+ 15. Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod4
+ 16. Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod3
+ 17. Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod2
+ 18. Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod0
+ 20. Port Connectivity Checks: "SPI_MASTER:spi_tr"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jun 10 10:53:37 2021           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; crs_prj                                         ;
+; Top-level Entity Name              ; top                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 1,342                                           ;
+;     Total combinational functions  ; 1,340                                           ;
+;     Dedicated logic registers      ; 100                                             ;
+; Total registers                    ; 100                                             ;
+; Total pins                         ; 55                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7       ;                    ;
+; Top-level entity name                                                      ; top                ; crs_prj            ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+; prescaler.v                      ; yes             ; User Verilog HDL File        ; F:/crs_prj/prescaler.v                                        ;         ;
+; fs_motor.v                       ; yes             ; User Verilog HDL File        ; F:/crs_prj/fs_motor.v                                         ;         ;
+; control_Unit.v                   ; yes             ; User Verilog HDL File        ; F:/crs_prj/control_Unit.v                                     ;         ;
+; top.v                            ; yes             ; User Verilog HDL File        ; F:/crs_prj/top.v                                              ;         ;
+; SPI_MASTER.v                     ; yes             ; User Verilog HDL File        ; F:/crs_prj/SPI_MASTER.v                                       ;         ;
+; decoder.v                        ; yes             ; User Verilog HDL File        ; F:/crs_prj/decoder.v                                          ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; f:/altera/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; f:/altera/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; f:/altera/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; f:/altera/quartus/libraries/megafunctions/aglobal130.inc      ;         ;
+; db/lpm_divide_48m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/lpm_divide_48m.tdf                              ;         ;
+; db/sign_div_unsign_bnh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/sign_div_unsign_bnh.tdf                         ;         ;
+; db/alt_u_div_o5f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/alt_u_div_o5f.tdf                               ;         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/add_sub_lkc.tdf                                 ;         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/add_sub_mkc.tdf                                 ;         ;
+; db/lpm_divide_38m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/lpm_divide_38m.tdf                              ;         ;
+; db/sign_div_unsign_anh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/sign_div_unsign_anh.tdf                         ;         ;
+; db/alt_u_div_m5f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/alt_u_div_m5f.tdf                               ;         ;
+; db/lpm_divide_28m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/lpm_divide_28m.tdf                              ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/sign_div_unsign_9nh.tdf                         ;         ;
+; db/alt_u_div_k5f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/alt_u_div_k5f.tdf                               ;         ;
+; db/lpm_divide_18m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/lpm_divide_18m.tdf                              ;         ;
+; db/sign_div_unsign_8nh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/sign_div_unsign_8nh.tdf                         ;         ;
+; db/alt_u_div_i5f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/crs_prj/db/alt_u_div_i5f.tdf                               ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 1,342    ;
+;                                             ;          ;
+; Total combinational functions               ; 1340     ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 361      ;
+;     -- 3 input functions                    ; 299      ;
+;     -- <=2 input functions                  ; 680      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 946      ;
+;     -- arithmetic mode                      ; 394      ;
+;                                             ;          ;
+; Total registers                             ; 100      ;
+;     -- Dedicated logic registers            ; 100      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 55       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 96       ;
+; Total fan-out                               ; 4005     ;
+; Average fan-out                             ; 2.68     ;
++---------------------------------------------+----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                               ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |top                                         ; 1340 (26)         ; 100 (18)     ; 0           ; 0            ; 0       ; 0         ; 55   ; 0            ; |top                                                                                                                                    ; work         ;
+;    |SPI_MASTER:spi_tr|                       ; 86 (86)           ; 50 (50)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SPI_MASTER:spi_tr                                                                                                                  ; work         ;
+;    |control_Unit:CU|                         ; 1214 (0)          ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU                                                                                                                    ; work         ;
+;       |fs_motor:motor|                       ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|fs_motor:motor                                                                                                     ; work         ;
+;       |prescaler:motor_ps|                   ; 1210 (213)        ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps                                                                                                 ; work         ;
+;          |lpm_divide:Mod0|                   ; 203 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod0                                                                                 ; work         ;
+;             |lpm_divide_18m:auto_generated|  ; 203 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod0|lpm_divide_18m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_8nh:divider| ; 203 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod0|lpm_divide_18m:auto_generated|sign_div_unsign_8nh:divider                       ; work         ;
+;                   |alt_u_div_i5f:divider|    ; 203 (203)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod0|lpm_divide_18m:auto_generated|sign_div_unsign_8nh:divider|alt_u_div_i5f:divider ; work         ;
+;          |lpm_divide:Mod1|                   ; 173 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod1                                                                                 ; work         ;
+;             |lpm_divide_28m:auto_generated|  ; 173 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod1|lpm_divide_28m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_9nh:divider| ; 173 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod1|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                       ; work         ;
+;                   |alt_u_div_k5f:divider|    ; 173 (173)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod1|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ; work         ;
+;          |lpm_divide:Mod2|                   ; 169 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod2                                                                                 ; work         ;
+;             |lpm_divide_28m:auto_generated|  ; 169 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod2|lpm_divide_28m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_9nh:divider| ; 169 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod2|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider                       ; work         ;
+;                   |alt_u_div_k5f:divider|    ; 169 (169)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod2|lpm_divide_28m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_k5f:divider ; work         ;
+;          |lpm_divide:Mod3|                   ; 131 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod3                                                                                 ; work         ;
+;             |lpm_divide_38m:auto_generated|  ; 131 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod3|lpm_divide_38m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_anh:divider| ; 131 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod3|lpm_divide_38m:auto_generated|sign_div_unsign_anh:divider                       ; work         ;
+;                   |alt_u_div_m5f:divider|    ; 131 (131)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod3|lpm_divide_38m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_m5f:divider ; work         ;
+;          |lpm_divide:Mod4|                   ; 123 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod4                                                                                 ; work         ;
+;             |lpm_divide_38m:auto_generated|  ; 123 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod4|lpm_divide_38m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_anh:divider| ; 123 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod4|lpm_divide_38m:auto_generated|sign_div_unsign_anh:divider                       ; work         ;
+;                   |alt_u_div_m5f:divider|    ; 123 (123)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod4|lpm_divide_38m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_m5f:divider ; work         ;
+;          |lpm_divide:Mod5|                   ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod5                                                                                 ; work         ;
+;             |lpm_divide_38m:auto_generated|  ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod5|lpm_divide_38m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_anh:divider| ; 125 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod5|lpm_divide_38m:auto_generated|sign_div_unsign_anh:divider                       ; work         ;
+;                   |alt_u_div_m5f:divider|    ; 125 (125)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod5|lpm_divide_38m:auto_generated|sign_div_unsign_anh:divider|alt_u_div_m5f:divider ; work         ;
+;          |lpm_divide:Mod6|                   ; 73 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod6                                                                                 ; work         ;
+;             |lpm_divide_48m:auto_generated|  ; 73 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod6|lpm_divide_48m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_bnh:divider| ; 73 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod6|lpm_divide_48m:auto_generated|sign_div_unsign_bnh:divider                       ; work         ;
+;                   |alt_u_div_o5f:divider|    ; 73 (73)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod6|lpm_divide_48m:auto_generated|sign_div_unsign_bnh:divider|alt_u_div_o5f:divider ; work         ;
+;    |decoder:dc_h|                            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|decoder:dc_h                                                                                                                       ; work         ;
+;    |decoder:dc_l|                            ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|decoder:dc_l                                                                                                                       ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                               ;
++--------------------------------------------------+-----------------------------------------------+
+; Register name                                    ; Reason for Removal                            ;
++--------------------------------------------------+-----------------------------------------------+
+; SPI_MASTER:spi_tr|r_TX_Byte[0..2,4..7,10,12..15] ; Stuck at GND due to stuck port data_in        ;
+; SPI_MASTER:spi_tr|r_TX_Byte[3]                   ; Merged with SPI_MASTER:spi_tr|r_TX_Byte[8]    ;
+; SPI_MASTER:spi_tr|r_TX_Byte[8]                   ; Merged with SPI_MASTER:spi_tr|r_TX_Byte[9]    ;
+; SPI_MASTER:spi_tr|r_TX_Byte[9]                   ; Merged with SPI_MASTER:spi_tr|r_TX_Byte[11]   ;
+; control_Unit:CU|fs_motor:motor|f2                ; Merged with control_Unit:CU|fs_motor:motor|f0 ;
+; control_Unit:CU|fs_motor:motor|f3                ; Merged with control_Unit:CU|fs_motor:motor|f1 ;
+; Total Number of Removed Registers = 17           ;                                               ;
++--------------------------------------------------+-----------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 100   ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 11    ;
+; Number of registers using Asynchronous Clear ; 50    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 44    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]    ; 11      ;
+; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]    ; 10      ;
+; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]    ; 9       ;
+; SPI_MASTER:spi_tr|cs_o                 ; 2       ;
+; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]    ; 5       ;
+; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]    ; 4       ;
+; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]    ; 3       ;
+; SPI_MASTER:spi_tr|r_TX_Bit_Count[3]    ; 2       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|rx_byte[2]                                      ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |top|control_Unit:CU|prescaler:motor_ps|clock_div[3] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |top|SPI_MASTER:spi_tr|r_sclk_Edges[5]               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top|SPI_MASTER:spi_tr|r_RX_Bit_Count[2]             ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top|SPI_MASTER:spi_tr|r_TX_Bit_Count[3]             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SPI_MASTER:spi_tr ;
++-------------------+--------+-----------------------------------+
+; Parameter Name    ; Value  ; Type                              ;
++-------------------+--------+-----------------------------------+
+; SPI_MODE          ; 0      ; Signed Integer                    ;
+; CLKS_PER_HALF_BIT ; 250000 ; Signed Integer                    ;
++-------------------+--------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod6 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 19             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_48m ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod5 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 18             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_38m ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod4 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 18             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_38m ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod3 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 18             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_38m ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 17             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 17             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_28m ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                      ;
++------------------------+----------------+-----------------------------------------------------------+
+; LPM_WIDTHN             ; 20             ; Untyped                                                   ;
+; LPM_WIDTHD             ; 16             ; Untyped                                                   ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                   ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                   ;
+; CBXI_PARAMETER         ; lpm_divide_18m ; Untyped                                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                            ;
++------------------------+----------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SPI_MASTER:spi_tr"                                                                                             ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; tx_ready_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; tx_done    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jun 10 10:53:25 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off crs_prj -c crs_prj
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file prescaler.v
+    Info (12023): Found entity 1: prescaler
+Info (12021): Found 1 design units, including 1 entities, in source file fs_motor.v
+    Info (12023): Found entity 1: fs_motor
+Warning (10275): Verilog HDL Module Instantiation warning at control_Unit.v(28): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.v
+    Info (12023): Found entity 1: control_Unit
+Info (12021): Found 1 design units, including 1 entities, in source file top.v
+    Info (12023): Found entity 1: top
+Info (12021): Found 1 design units, including 1 entities, in source file spi_master.v
+    Info (12023): Found entity 1: SPI_MASTER
+Info (12021): Found 1 design units, including 1 entities, in source file decoder.v
+    Info (12023): Found entity 1: decoder
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:dc_h"
+Info (12128): Elaborating entity "control_Unit" for hierarchy "control_Unit:CU"
+Info (12128): Elaborating entity "prescaler" for hierarchy "control_Unit:CU|prescaler:motor_ps"
+Info (12128): Elaborating entity "fs_motor" for hierarchy "control_Unit:CU|fs_motor:motor"
+Info (12128): Elaborating entity "SPI_MASTER" for hierarchy "SPI_MASTER:spi_tr"
+Warning (10230): Verilog HDL assignment warning at SPI_MASTER.v(74): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_MASTER.v(81): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at SPI_MASTER.v(83): truncated value with size 32 to match size of target (19)
+Warning (10230): Verilog HDL assignment warning at SPI_MASTER.v(88): truncated value with size 32 to match size of target (19)
+Warning (10230): Verilog HDL assignment warning at SPI_MASTER.v(163): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at SPI_MASTER.v(192): truncated value with size 32 to match size of target (3)
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer control_Unit:CU|prescaler:motor_ps|Mux0
+Info (278001): Inferred 7 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "control_Unit:CU|prescaler:motor_ps|Mod6"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "control_Unit:CU|prescaler:motor_ps|Mod5"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "control_Unit:CU|prescaler:motor_ps|Mod4"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "control_Unit:CU|prescaler:motor_ps|Mod3"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "control_Unit:CU|prescaler:motor_ps|Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "control_Unit:CU|prescaler:motor_ps|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "control_Unit:CU|prescaler:motor_ps|Mod0"
+Info (12130): Elaborated megafunction instantiation "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod6"
+Info (12133): Instantiated megafunction "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod6" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "19"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_48m.tdf
+    Info (12023): Found entity 1: lpm_divide_48m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bnh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o5f.tdf
+    Info (12023): Found entity 1: alt_u_div_o5f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12130): Elaborated megafunction instantiation "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod5"
+Info (12133): Instantiated megafunction "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod5" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "18"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_38m.tdf
+    Info (12023): Found entity 1: lpm_divide_38m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_anh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_anh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m5f.tdf
+    Info (12023): Found entity 1: alt_u_div_m5f
+Info (12130): Elaborated megafunction instantiation "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod4"
+Info (12133): Instantiated megafunction "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod4" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "18"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod3"
+Info (12133): Instantiated megafunction "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod3" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "18"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod2"
+Info (12133): Instantiated megafunction "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod2" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "17"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_28m.tdf
+    Info (12023): Found entity 1: lpm_divide_28m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k5f.tdf
+    Info (12023): Found entity 1: alt_u_div_k5f
+Info (12130): Elaborated megafunction instantiation "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "17"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "control_Unit:CU|prescaler:motor_ps|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "20"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_18m.tdf
+    Info (12023): Found entity 1: lpm_divide_18m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i5f.tdf
+    Info (12023): Found entity 1: alt_u_div_i5f
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[3]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[32]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[34]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[35]" and its non-tri-state driver.
+Warning (13039): The following bidir pins have no drivers
+    Warning (13040): Bidir "GPIO_1[33]" has no driver
+    Warning (13040): Bidir "GPIO_1[4]" has no driver
+    Warning (13040): Bidir "GPIO_1[5]" has no driver
+    Warning (13040): Bidir "GPIO_1[6]" has no driver
+    Warning (13040): Bidir "GPIO_1[7]" has no driver
+    Warning (13040): Bidir "GPIO_1[8]" has no driver
+    Warning (13040): Bidir "GPIO_1[9]" has no driver
+    Warning (13040): Bidir "GPIO_1[10]" has no driver
+    Warning (13040): Bidir "GPIO_1[11]" has no driver
+    Warning (13040): Bidir "GPIO_1[12]" has no driver
+    Warning (13040): Bidir "GPIO_1[13]" has no driver
+    Warning (13040): Bidir "GPIO_1[14]" has no driver
+    Warning (13040): Bidir "GPIO_1[15]" has no driver
+    Warning (13040): Bidir "GPIO_1[16]" has no driver
+    Warning (13040): Bidir "GPIO_1[17]" has no driver
+    Warning (13040): Bidir "GPIO_1[18]" has no driver
+    Warning (13040): Bidir "GPIO_1[19]" has no driver
+    Warning (13040): Bidir "GPIO_1[20]" has no driver
+    Warning (13040): Bidir "GPIO_1[21]" has no driver
+    Warning (13040): Bidir "GPIO_1[22]" has no driver
+    Warning (13040): Bidir "GPIO_1[23]" has no driver
+    Warning (13040): Bidir "GPIO_1[24]" has no driver
+    Warning (13040): Bidir "GPIO_1[25]" has no driver
+    Warning (13040): Bidir "GPIO_1[26]" has no driver
+    Warning (13040): Bidir "GPIO_1[27]" has no driver
+    Warning (13040): Bidir "GPIO_1[28]" has no driver
+    Warning (13040): Bidir "GPIO_1[29]" has no driver
+    Warning (13040): Bidir "GPIO_1[30]" has no driver
+    Warning (13040): Bidir "GPIO_1[31]" has no driver
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_1[0]~synth"
+    Warning (13010): Node "GPIO_1[1]~synth"
+    Warning (13010): Node "GPIO_1[2]~synth"
+    Warning (13010): Node "GPIO_1[3]~synth"
+    Warning (13010): Node "GPIO_1[32]~synth"
+    Warning (13010): Node "GPIO_1[34]~synth"
+    Warning (13010): Node "GPIO_1[35]~synth"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+Info (21057): Implemented 1398 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21060): Implemented 36 bidirectional pins
+    Info (21061): Implemented 1343 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 4652 megabytes
+    Info: Processing ended: Thu Jun 10 10:53:38 2021
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:04
+
+

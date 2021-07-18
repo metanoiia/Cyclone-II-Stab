@@ -1,0 +1,1440 @@
+TimeQuest Timing Analyzer report for crs_prj
+Thu Jun 10 10:54:01 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Setup: 'control_Unit:CU|prescaler:motor_ps|clk_10'
+ 13. Slow Model Hold: 'CLOCK_50'
+ 14. Slow Model Hold: 'control_Unit:CU|prescaler:motor_ps|clk_10'
+ 15. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 16. Slow Model Minimum Pulse Width: 'control_Unit:CU|prescaler:motor_ps|clk_10'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'CLOCK_50'
+ 27. Fast Model Setup: 'control_Unit:CU|prescaler:motor_ps|clk_10'
+ 28. Fast Model Hold: 'CLOCK_50'
+ 29. Fast Model Hold: 'control_Unit:CU|prescaler:motor_ps|clk_10'
+ 30. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 31. Fast Model Minimum Pulse Width: 'control_Unit:CU|prescaler:motor_ps|clk_10'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; crs_prj                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                               ;
++-------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------+
+; Clock Name                                ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                       ;
++-------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------+
+; CLOCK_50                                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                                  ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { control_Unit:CU|prescaler:motor_ps|clk_10 } ;
++-------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                                          ;
++------------+-----------------+-------------------------------------------+-------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                ; Note                                                  ;
++------------+-----------------+-------------------------------------------+-------------------------------------------------------+
+; 44.49 MHz  ; 44.49 MHz       ; CLOCK_50                                  ;                                                       ;
+; 977.52 MHz ; 450.05 MHz      ; control_Unit:CU|prescaler:motor_ps|clk_10 ; limit due to high minimum pulse width violation (tch) ;
++------------+-----------------+-------------------------------------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------------------------------+
+; Slow Model Setup Summary                                            ;
++-------------------------------------------+---------+---------------+
+; Clock                                     ; Slack   ; End Point TNS ;
++-------------------------------------------+---------+---------------+
+; CLOCK_50                                  ; -21.475 ; -388.905      ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.023  ; -0.046        ;
++-------------------------------------------+---------+---------------+
+
+
++--------------------------------------------------------------------+
+; Slow Model Hold Summary                                            ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; CLOCK_50                                  ; -2.691 ; -2.691        ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.217  ; 0.000         ;
++-------------------------------------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++--------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary                             ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; CLOCK_50                                  ; -1.631 ; -118.943      ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.611 ; -4.888        ;
++-------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                  ;
++---------+--------------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                        ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -21.475 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.418      ; 22.931     ;
+; -21.113 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.418      ; 22.569     ;
+; -20.816 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 22.264     ;
+; -20.727 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 22.175     ;
+; -20.666 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 22.114     ;
+; -20.464 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 21.912     ;
+; -20.439 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 21.887     ;
+; -20.349 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 21.797     ;
+; -20.168 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 21.616     ;
+; -20.041 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 21.489     ;
+; -19.958 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 21.406     ;
+; -19.880 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.410      ; 21.328     ;
+; -19.335 ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.503      ; 20.876     ;
+; -19.329 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.503      ; 20.870     ;
+; -19.202 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 20.735     ;
+; -19.176 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.503      ; 20.717     ;
+; -19.163 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.503      ; 20.704     ;
+; -19.095 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.503      ; 20.636     ;
+; -19.032 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.503      ; 20.573     ;
+; -18.838 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 20.371     ;
+; -18.719 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 20.252     ;
+; -18.685 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 20.218     ;
+; -18.612 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 20.145     ;
+; -18.609 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 20.142     ;
+; -18.475 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 20.008     ;
+; -18.449 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 19.982     ;
+; -18.412 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.338      ; 19.788     ;
+; -18.364 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.418      ; 19.820     ;
+; -18.295 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.338      ; 19.671     ;
+; -18.214 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 19.747     ;
+; -18.112 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.495      ; 19.645     ;
+; -17.780 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 19.148     ;
+; -17.765 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 19.133     ;
+; -17.719 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 19.087     ;
+; -17.624 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 18.992     ;
+; -17.422 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 18.790     ;
+; -17.355 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 18.723     ;
+; -17.179 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 18.547     ;
+; -17.057 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 18.425     ;
+; -17.050 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 18.418     ;
+; -16.924 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.330      ; 18.292     ;
+; -16.591 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.069      ; 17.698     ;
+; -16.542 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.069      ; 17.649     ;
+; -16.508 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.069      ; 17.615     ;
+; -16.469 ; control_Unit:CU|prescaler:motor_ps|clock_div[2]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 17.572     ;
+; -16.391 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.069      ; 17.498     ;
+; -16.280 ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 17.383     ;
+; -16.213 ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 17.316     ;
+; -16.199 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 17.298     ;
+; -16.142 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 17.245     ;
+; -16.113 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 17.216     ;
+; -16.106 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 17.205     ;
+; -16.079 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 17.182     ;
+; -16.070 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.338      ; 17.446     ;
+; -15.993 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 17.096     ;
+; -15.992 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 17.091     ;
+; -15.933 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 17.032     ;
+; -15.913 ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.503      ; 17.454     ;
+; -15.891 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 16.994     ;
+; -15.880 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 16.979     ;
+; -15.802 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 16.901     ;
+; -15.770 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.865     ;
+; -15.765 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.860     ;
+; -15.696 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 16.795     ;
+; -15.588 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.683     ;
+; -15.568 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.663     ;
+; -15.564 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 16.663     ;
+; -15.540 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.393      ; 16.971     ;
+; -15.519 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.614     ;
+; -15.424 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.519     ;
+; -15.306 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 16.405     ;
+; -15.285 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.393      ; 16.716     ;
+; -15.178 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.273     ;
+; -15.160 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 16.583     ;
+; -15.154 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.249     ;
+; -15.103 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.061      ; 16.202     ;
+; -15.090 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 16.513     ;
+; -15.057 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 16.480     ;
+; -15.042 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 16.137     ;
+; -15.020 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 16.443     ;
+; -14.867 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.057      ; 15.962     ;
+; -14.775 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 16.198     ;
+; -14.616 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 16.039     ;
+; -14.535 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 15.958     ;
+; -14.450 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 15.873     ;
+; -14.366 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 15.789     ;
+; -14.308 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.418      ; 15.764     ;
+; -14.251 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.385      ; 15.674     ;
+; -13.404 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.338      ; 14.780     ;
+; -12.855 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.069      ; 13.962     ;
+; -12.646 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.016      ; 13.700     ;
+; -12.477 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.393      ; 13.908     ;
+; -12.452 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.024      ; 13.514     ;
+; -12.395 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.024      ; 13.457     ;
+; -12.371 ; control_Unit:CU|prescaler:motor_ps|clock_div[1]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.065      ; 13.474     ;
+; -12.264 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.024      ; 13.326     ;
+; -12.263 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.024      ; 13.325     ;
+; -12.005 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.418      ; 13.461     ;
+; -11.799 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.016      ; 12.853     ;
+; -11.689 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.338      ; 13.065     ;
++---------+--------------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'control_Unit:CU|prescaler:motor_ps|clk_10'                                                                                                                                                           ;
++--------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock                              ; Latch Clock                               ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; -0.023 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|f0     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 1.061      ;
+; -0.023 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|f1     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 1.061      ;
+; -0.020 ; rx_byte[7]                            ; control_Unit:CU|fs_motor:motor|f0     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.500        ; 1.723      ; 2.281      ;
+; -0.020 ; rx_byte[7]                            ; control_Unit:CU|fs_motor:motor|f1     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.500        ; 1.723      ; 2.281      ;
+; 0.123  ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.915      ;
+; 0.123  ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|f0     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.915      ;
+; 0.123  ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|f1     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.915      ;
+; 0.307  ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.731      ;
+; 0.535  ; rot_en                                ; control_Unit:CU|fs_motor:motor|f0     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 1.723      ; 2.226      ;
+; 0.535  ; rot_en                                ; control_Unit:CU|fs_motor:motor|f1     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 1.723      ; 2.226      ;
++--------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                                     ;
++--------+--------------------------------------------------+--------------------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                        ; To Node                                          ; Launch Clock                              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------+--------------------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+; -2.691 ; control_Unit:CU|prescaler:motor_ps|clk_10        ; control_Unit:CU|prescaler:motor_ps|clk_10        ; control_Unit:CU|prescaler:motor_ps|clk_10 ; CLOCK_50    ; 0.000        ; 2.859      ; 0.731      ;
+; -2.191 ; control_Unit:CU|prescaler:motor_ps|clk_10        ; control_Unit:CU|prescaler:motor_ps|clk_10        ; control_Unit:CU|prescaler:motor_ps|clk_10 ; CLOCK_50    ; -0.500       ; 2.859      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|rx_byte_o[0]                   ; SPI_MASTER:spi_tr|rx_byte_o[0]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|rx_byte_o[3]                   ; SPI_MASTER:spi_tr|rx_byte_o[3]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|rx_byte_o[2]                   ; SPI_MASTER:spi_tr|rx_byte_o[2]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|rx_byte_o[1]                   ; SPI_MASTER:spi_tr|rx_byte_o[1]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|rx_byte_o[7]                   ; SPI_MASTER:spi_tr|rx_byte_o[7]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|rx_byte_o[6]                   ; SPI_MASTER:spi_tr|rx_byte_o[6]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|rx_byte_o[4]                   ; SPI_MASTER:spi_tr|rx_byte_o[4]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|rx_byte_o[5]                   ; SPI_MASTER:spi_tr|rx_byte_o[5]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_sclk                         ; SPI_MASTER:spi_tr|r_sclk                         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_TX_Byte[11]                  ; SPI_MASTER:spi_tr|r_TX_Byte[11]                  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|mosi_o                         ; SPI_MASTER:spi_tr|mosi_o                         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; SPI_MASTER:spi_tr|cs_o                           ; SPI_MASTER:spi_tr|cs_o                           ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; control_Unit:CU|prescaler:motor_ps|clk_5         ; control_Unit:CU|prescaler:motor_ps|clk_5         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; control_Unit:CU|prescaler:motor_ps|clk_20        ; control_Unit:CU|prescaler:motor_ps|clk_20        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; control_Unit:CU|prescaler:motor_ps|clk_25        ; control_Unit:CU|prescaler:motor_ps|clk_25        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; control_Unit:CU|prescaler:motor_ps|clk_75        ; control_Unit:CU|prescaler:motor_ps|clk_75        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; control_Unit:CU|prescaler:motor_ps|clk_100       ; control_Unit:CU|prescaler:motor_ps|clk_100       ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; control_Unit:CU|prescaler:motor_ps|clk_50        ; control_Unit:CU|prescaler:motor_ps|clk_50        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; control_Unit:CU|prescaler:motor_ps|clk_35        ; control_Unit:CU|prescaler:motor_ps|clk_35        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445  ; rdy_delay                                        ; rdy_delay                                        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.620  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.906      ;
+; 0.628  ; delay_cnt[3]                                     ; delay_cnt[3]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.914      ;
+; 0.634  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.920      ;
+; 0.637  ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.923      ;
+; 0.645  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.931      ;
+; 0.662  ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.948      ;
+; 0.666  ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.952      ;
+; 0.937  ; SPI_MASTER:spi_tr|r_sclk_Edges[4]                ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.223      ;
+; 0.947  ; SPI_MASTER:spi_tr|r_sclk_Edges[4]                ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.233      ;
+; 0.948  ; SPI_MASTER:spi_tr|r_sclk_Edges[1]                ; SPI_MASTER:spi_tr|r_sclk_Edges[1]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.234      ;
+; 0.964  ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.250      ;
+; 0.968  ; SPI_MASTER:spi_tr|r_sclk_Count[9]                ; SPI_MASTER:spi_tr|r_sclk_Count[9]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.254      ;
+; 0.972  ; SPI_MASTER:spi_tr|r_sclk_Count[10]               ; SPI_MASTER:spi_tr|r_sclk_Count[10]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.258      ;
+; 0.973  ; SPI_MASTER:spi_tr|r_sclk_Edges[0]                ; SPI_MASTER:spi_tr|r_sclk_Edges[0]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.259      ;
+; 0.975  ; SPI_MASTER:spi_tr|r_sclk_Count[11]               ; SPI_MASTER:spi_tr|r_sclk_Count[11]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.261      ;
+; 0.976  ; SPI_MASTER:spi_tr|r_sclk_Count[6]                ; SPI_MASTER:spi_tr|r_sclk_Count[6]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.262      ;
+; 0.977  ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.263      ;
+; 0.979  ; delay_cnt[1]                                     ; delay_cnt[1]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.265      ;
+; 0.979  ; SPI_MASTER:spi_tr|r_sclk_Count[2]                ; SPI_MASTER:spi_tr|r_sclk_Count[2]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.265      ;
+; 0.981  ; SPI_MASTER:spi_tr|r_sclk_Count[0]                ; SPI_MASTER:spi_tr|r_sclk_Count[0]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.267      ;
+; 0.981  ; SPI_MASTER:spi_tr|r_sclk_Count[7]                ; SPI_MASTER:spi_tr|r_sclk_Count[7]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.267      ;
+; 0.983  ; SPI_MASTER:spi_tr|r_sclk_Count[4]                ; SPI_MASTER:spi_tr|r_sclk_Count[4]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.269      ;
+; 0.983  ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.269      ;
+; 0.985  ; control_Unit:CU|prescaler:motor_ps|clock_div[1]  ; control_Unit:CU|prescaler:motor_ps|clock_div[1]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.271      ;
+; 0.985  ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.271      ;
+; 0.986  ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.272      ;
+; 0.986  ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.272      ;
+; 0.986  ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.272      ;
+; 0.986  ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.272      ;
+; 0.987  ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.273      ;
+; 0.987  ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.273      ;
+; 0.988  ; SPI_MASTER:spi_tr|r_sclk_Edges[2]                ; SPI_MASTER:spi_tr|r_sclk_Edges[2]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.274      ;
+; 0.996  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.282      ;
+; 0.997  ; SPI_MASTER:spi_tr|r_sclk                         ; SPI_MASTER:spi_tr|sclk_o                         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.002      ; 1.285      ;
+; 1.000  ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.286      ;
+; 1.001  ; SPI_MASTER:spi_tr|r_sclk_Edges[3]                ; SPI_MASTER:spi_tr|r_sclk_Edges[3]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.287      ;
+; 1.004  ; SPI_MASTER:spi_tr|r_sclk_Edges[4]                ; SPI_MASTER:spi_tr|r_sclk_Edges[4]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.290      ;
+; 1.012  ; SPI_MASTER:spi_tr|r_sclk_Count[12]               ; SPI_MASTER:spi_tr|r_sclk_Count[12]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.298      ;
+; 1.012  ; SPI_MASTER:spi_tr|r_sclk_Count[14]               ; SPI_MASTER:spi_tr|r_sclk_Count[14]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.298      ;
+; 1.015  ; control_Unit:CU|prescaler:motor_ps|clock_div[0]  ; control_Unit:CU|prescaler:motor_ps|clock_div[0]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.301      ;
+; 1.015  ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.301      ;
+; 1.017  ; SPI_MASTER:spi_tr|r_sclk_Count[1]                ; SPI_MASTER:spi_tr|r_sclk_Count[1]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.303      ;
+; 1.018  ; SPI_MASTER:spi_tr|r_sclk_Count[3]                ; SPI_MASTER:spi_tr|r_sclk_Count[3]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.304      ;
+; 1.022  ; delay_cnt[2]                                     ; delay_cnt[2]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.308      ;
+; 1.024  ; delay_cnt[0]                                     ; delay_cnt[0]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.310      ;
+; 1.026  ; control_Unit:CU|prescaler:motor_ps|clock_div[2]  ; control_Unit:CU|prescaler:motor_ps|clock_div[2]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.312      ;
+; 1.026  ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.312      ;
+; 1.033  ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.319      ;
+; 1.033  ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.319      ;
+; 1.035  ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.321      ;
+; 1.036  ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.322      ;
+; 1.042  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.328      ;
+; 1.045  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.331      ;
+; 1.117  ; SPI_MASTER:spi_tr|rx_byte_o[5]                   ; rx_byte[5]                                       ; CLOCK_50                                  ; CLOCK_50    ; -0.500       ; 0.000      ; 0.903      ;
+; 1.120  ; SPI_MASTER:spi_tr|rx_byte_o[6]                   ; rx_byte[6]                                       ; CLOCK_50                                  ; CLOCK_50    ; -0.500       ; 0.000      ; 0.906      ;
+; 1.120  ; SPI_MASTER:spi_tr|rx_byte_o[4]                   ; rx_byte[4]                                       ; CLOCK_50                                  ; CLOCK_50    ; -0.500       ; 0.000      ; 0.906      ;
+; 1.204  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.490      ;
+; 1.235  ; SPI_MASTER:spi_tr|r_Trailing_Edge                ; SPI_MASTER:spi_tr|mosi_o                         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.521      ;
+; 1.266  ; SPI_MASTER:spi_tr|rx_byte_o[3]                   ; rx_byte[3]                                       ; CLOCK_50                                  ; CLOCK_50    ; -0.500       ; 0.000      ; 1.052      ;
+; 1.277  ; SPI_MASTER:spi_tr|rx_byte_o[0]                   ; rx_byte[0]                                       ; CLOCK_50                                  ; CLOCK_50    ; -0.500       ; 0.000      ; 1.063      ;
+; 1.359  ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; SPI_MASTER:spi_tr|tx_ready_o                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.645      ;
+; 1.400  ; SPI_MASTER:spi_tr|r_sclk_Count[9]                ; SPI_MASTER:spi_tr|r_sclk_Count[10]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.686      ;
+; 1.404  ; SPI_MASTER:spi_tr|r_sclk_Count[10]               ; SPI_MASTER:spi_tr|r_sclk_Count[11]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.690      ;
+; 1.405  ; SPI_MASTER:spi_tr|r_sclk_Edges[0]                ; SPI_MASTER:spi_tr|r_sclk_Edges[1]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.691      ;
+; 1.407  ; SPI_MASTER:spi_tr|r_sclk_Count[11]               ; SPI_MASTER:spi_tr|r_sclk_Count[12]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.693      ;
+; 1.407  ; SPI_MASTER:spi_tr|r_sclk_Count[13]               ; SPI_MASTER:spi_tr|r_sclk_Count[14]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.693      ;
+; 1.408  ; SPI_MASTER:spi_tr|r_sclk_Count[6]                ; SPI_MASTER:spi_tr|r_sclk_Count[7]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.694      ;
+; 1.409  ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.695      ;
+; 1.410  ; SPI_MASTER:spi_tr|r_sclk_Edges[1]                ; SPI_MASTER:spi_tr|r_sclk_Edges[2]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.696      ;
+; 1.411  ; SPI_MASTER:spi_tr|r_sclk_Count[2]                ; SPI_MASTER:spi_tr|r_sclk_Count[3]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.697      ;
+; 1.411  ; delay_cnt[1]                                     ; delay_cnt[2]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 1.697      ;
++--------+--------------------------------------------------+--------------------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'control_Unit:CU|prescaler:motor_ps|clk_10'                                                                                                                                                           ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                              ; Latch Clock                               ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; 0.217 ; rot_en                                ; control_Unit:CU|fs_motor:motor|f0     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 1.723      ; 2.226      ;
+; 0.217 ; rot_en                                ; control_Unit:CU|fs_motor:motor|f1     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 1.723      ; 2.226      ;
+; 0.445 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.731      ;
+; 0.629 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|f0     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.915      ;
+; 0.629 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|f1     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.915      ;
+; 0.629 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.915      ;
+; 0.772 ; rx_byte[7]                            ; control_Unit:CU|fs_motor:motor|f0     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.500       ; 1.723      ; 2.281      ;
+; 0.772 ; rx_byte[7]                            ; control_Unit:CU|fs_motor:motor|f1     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.500       ; 1.723      ; 2.281      ;
+; 0.775 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|f0     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 1.061      ;
+; 0.775 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|f1     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 1.061      ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|cs_o              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|cs_o              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|mosi_o            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|mosi_o            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_Leading_Edge    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_Leading_Edge    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Byte[11]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Byte[11]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_DV           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_DV           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_Trailing_Edge   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_Trailing_Edge   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[10]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[10]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[11]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[11]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[12]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[12]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[13]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[13]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[14]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[14]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[15]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[15]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[16]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[16]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[17]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[17]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[18]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[18]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[5]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[5]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[6]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[6]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[7]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[7]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[8]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[8]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[9]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[9]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[5]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[5]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[3]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[3]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[4]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[4]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[5]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[5]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[6]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[6]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[7]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[7]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_dv_o           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_dv_o           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|sclk_o            ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|sclk_o            ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|tx_ready_o        ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'control_Unit:CU|prescaler:motor_ps|clk_10'                                                                                ;
++--------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                     ; Clock Edge ; Target                                ;
++--------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|cnt[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|cnt[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|cnt[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|cnt[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|f0     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|f0     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|f1     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|f1     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0|datad                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0|datad                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~0|combout            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~0|combout            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~0|datad              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~0|datad              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~2|combout            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~2|combout            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~2|datad              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~2|datad              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~clkctrl|inclk[0]     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~clkctrl|inclk[0]     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~clkctrl|outclk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~clkctrl|outclk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|clk_10|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|clk_10|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|cnt[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|cnt[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|cnt[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|cnt[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|f0|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|f0|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|f1|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|f1|clk                       ;
++--------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                      ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise  ; Fall  ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 4.866 ; 4.866 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[33] ; CLOCK_50                                  ; 4.866 ; 4.866 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; 6.549 ; 6.549 ; Rise       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; 6.549 ; 6.549 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; 5.825 ; 5.825 ; Fall       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; 5.825 ; 5.825 ; Fall       ; CLOCK_50                                  ;
+; KEY[*]      ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 3.438 ; 3.438 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  KEY[0]     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 3.438 ; 3.438 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                         ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise   ; Fall   ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; -4.591 ; -4.591 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[33] ; CLOCK_50                                  ; -4.591 ; -4.591 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; -4.575 ; -4.575 ; Rise       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; -4.575 ; -4.575 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; -4.446 ; -4.446 ; Fall       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; -4.446 ; -4.446 ; Fall       ; CLOCK_50                                  ;
+; KEY[*]      ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -2.913 ; -2.913 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  KEY[0]     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -2.913 ; -2.913 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                              ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise   ; Fall   ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 10.054 ; 10.054 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[32] ; CLOCK_50                                  ; 9.092  ; 9.092  ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[34] ; CLOCK_50                                  ; 10.054 ; 10.054 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[35] ; CLOCK_50                                  ; 8.970  ; 8.970  ; Rise       ; CLOCK_50                                  ;
+; HEX0[*]     ; CLOCK_50                                  ; 9.671  ; 9.671  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[0]    ; CLOCK_50                                  ; 9.403  ; 9.403  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[1]    ; CLOCK_50                                  ; 9.128  ; 9.128  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[2]    ; CLOCK_50                                  ; 9.671  ; 9.671  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[3]    ; CLOCK_50                                  ; 9.483  ; 9.483  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[4]    ; CLOCK_50                                  ; 9.493  ; 9.493  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[5]    ; CLOCK_50                                  ; 9.523  ; 9.523  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[6]    ; CLOCK_50                                  ; 9.494  ; 9.494  ; Fall       ; CLOCK_50                                  ;
+; HEX1[*]     ; CLOCK_50                                  ; 9.925  ; 9.925  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[0]    ; CLOCK_50                                  ; 9.558  ; 9.558  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[1]    ; CLOCK_50                                  ; 9.546  ; 9.546  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[2]    ; CLOCK_50                                  ; 9.523  ; 9.523  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[3]    ; CLOCK_50                                  ; 9.538  ; 9.538  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[4]    ; CLOCK_50                                  ; 9.523  ; 9.523  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[5]    ; CLOCK_50                                  ; 9.913  ; 9.913  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[6]    ; CLOCK_50                                  ; 9.925  ; 9.925  ; Fall       ; CLOCK_50                                  ;
+; GPIO_1[*]   ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.642 ; 11.642 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[0]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 10.747 ; 10.747 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[1]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.642 ; 11.642 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[2]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.106 ; 11.106 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[3]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.632 ; 11.632 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                      ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise   ; Fall   ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 8.970  ; 8.970  ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[32] ; CLOCK_50                                  ; 9.092  ; 9.092  ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[34] ; CLOCK_50                                  ; 10.054 ; 10.054 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[35] ; CLOCK_50                                  ; 8.970  ; 8.970  ; Rise       ; CLOCK_50                                  ;
+; HEX0[*]     ; CLOCK_50                                  ; 8.826  ; 8.826  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[0]    ; CLOCK_50                                  ; 9.194  ; 9.194  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[1]    ; CLOCK_50                                  ; 8.878  ; 8.878  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[2]    ; CLOCK_50                                  ; 9.001  ; 9.001  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[3]    ; CLOCK_50                                  ; 9.227  ; 9.227  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[4]    ; CLOCK_50                                  ; 9.248  ; 9.248  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[5]    ; CLOCK_50                                  ; 9.271  ; 9.271  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[6]    ; CLOCK_50                                  ; 8.826  ; 8.826  ; Fall       ; CLOCK_50                                  ;
+; HEX1[*]     ; CLOCK_50                                  ; 9.081  ; 9.081  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[0]    ; CLOCK_50                                  ; 9.147  ; 9.147  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[1]    ; CLOCK_50                                  ; 9.106  ; 9.106  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[2]    ; CLOCK_50                                  ; 9.081  ; 9.081  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[3]    ; CLOCK_50                                  ; 9.098  ; 9.098  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[4]    ; CLOCK_50                                  ; 9.120  ; 9.120  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[5]    ; CLOCK_50                                  ; 9.473  ; 9.473  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[6]    ; CLOCK_50                                  ; 9.481  ; 9.481  ; Fall       ; CLOCK_50                                  ;
+; GPIO_1[*]   ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 10.747 ; 10.747 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[0]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 10.747 ; 10.747 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[1]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.642 ; 11.642 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[2]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.106 ; 11.106 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[3]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.632 ; 11.632 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Fast Model Setup Summary                                           ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; CLOCK_50                                  ; -7.981 ; -106.335      ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.148  ; 0.000         ;
++-------------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------+
+; Fast Model Hold Summary                                            ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; CLOCK_50                                  ; -1.721 ; -1.721        ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.215  ; 0.000         ;
++-------------------------------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++--------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary                             ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; CLOCK_50                                  ; -1.380 ; -97.380       ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.500 ; -4.000        ;
++-------------------------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                 ;
++--------+--------------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                        ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -7.981 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.202     ; 8.811      ;
+; -7.841 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.202     ; 8.671      ;
+; -7.717 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.541      ;
+; -7.690 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.514      ;
+; -7.665 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.489      ;
+; -7.583 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.407      ;
+; -7.568 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.392      ;
+; -7.517 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.341      ;
+; -7.430 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.254      ;
+; -7.390 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.214      ;
+; -7.340 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.164      ;
+; -7.321 ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.158     ; 8.195      ;
+; -7.314 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.158     ; 8.188      ;
+; -7.306 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.208     ; 8.130      ;
+; -7.246 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.158     ; 8.120      ;
+; -7.243 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 8.111      ;
+; -7.243 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.158     ; 8.117      ;
+; -7.211 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.158     ; 8.085      ;
+; -7.188 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.158     ; 8.062      ;
+; -7.090 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.958      ;
+; -7.016 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.884      ;
+; -7.012 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.880      ;
+; -6.987 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.855      ;
+; -6.968 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.268     ; 7.732      ;
+; -6.967 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.835      ;
+; -6.928 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.796      ;
+; -6.916 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.268     ; 7.680      ;
+; -6.898 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.766      ;
+; -6.821 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.689      ;
+; -6.780 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.202     ; 7.610      ;
+; -6.754 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.164     ; 7.622      ;
+; -6.712 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.470      ;
+; -6.696 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.454      ;
+; -6.687 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.445      ;
+; -6.644 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.402      ;
+; -6.560 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.318      ;
+; -6.524 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.282      ;
+; -6.438 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.196      ;
+; -6.396 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.154      ;
+; -6.379 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.137      ;
+; -6.324 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.274     ; 7.082      ;
+; -6.255 ; control_Unit:CU|prescaler:motor_ps|clock_div[2]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 6.928      ;
+; -6.208 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.351     ; 6.889      ;
+; -6.191 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.351     ; 6.872      ;
+; -6.189 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.351     ; 6.870      ;
+; -6.160 ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 6.833      ;
+; -6.144 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.351     ; 6.825      ;
+; -6.131 ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 6.804      ;
+; -6.099 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 6.772      ;
+; -6.070 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 6.743      ;
+; -6.067 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 6.740      ;
+; -6.050 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.725      ;
+; -6.039 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 6.712      ;
+; -6.025 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.268     ; 6.789      ;
+; -6.008 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.683      ;
+; -5.988 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 6.661      ;
+; -5.954 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.629      ;
+; -5.947 ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.158     ; 6.821      ;
+; -5.927 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.594      ;
+; -5.900 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.567      ;
+; -5.896 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.571      ;
+; -5.872 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.547      ;
+; -5.868 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.543      ;
+; -5.845 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.512      ;
+; -5.833 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.508      ;
+; -5.815 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.482      ;
+; -5.805 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.472      ;
+; -5.787 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.221     ; 6.598      ;
+; -5.774 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.441      ;
+; -5.756 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.431      ;
+; -5.685 ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.221     ; 6.496      ;
+; -5.672 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.339      ;
+; -5.664 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.331      ;
+; -5.642 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.317      ;
+; -5.634 ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.439      ;
+; -5.598 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.265      ;
+; -5.585 ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.390      ;
+; -5.571 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.357     ; 6.246      ;
+; -5.564 ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.369      ;
+; -5.556 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.361      ;
+; -5.501 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.365     ; 6.168      ;
+; -5.464 ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.269      ;
+; -5.384 ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.189      ;
+; -5.347 ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.152      ;
+; -5.295 ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.100      ;
+; -5.267 ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.072      ;
+; -5.257 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.202     ; 6.087      ;
+; -5.215 ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.227     ; 6.020      ;
+; -4.943 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.268     ; 5.707      ;
+; -4.694 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.351     ; 5.375      ;
+; -4.670 ; control_Unit:CU|prescaler:motor_ps|clock_div[1]  ; control_Unit:CU|prescaler:motor_ps|clk_35  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.359     ; 5.343      ;
+; -4.548 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_25  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.221     ; 5.359      ;
+; -4.298 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_100 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.202     ; 5.128      ;
+; -4.242 ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clk_50  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.268     ; 5.006      ;
+; -4.201 ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.014      ; 5.247      ;
+; -4.185 ; control_Unit:CU|prescaler:motor_ps|clock_div[2]  ; control_Unit:CU|prescaler:motor_ps|clk_75  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.158     ; 5.059      ;
+; -4.134 ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.020      ; 5.186      ;
+; -4.111 ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.020      ; 5.163      ;
+; -4.074 ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; control_Unit:CU|prescaler:motor_ps|clk_20  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.351     ; 4.755      ;
+; -4.061 ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clk_10  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.020      ; 5.113      ;
++--------+--------------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'control_Unit:CU|prescaler:motor_ps|clk_10'                                                                                                                                                          ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                              ; Latch Clock                               ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; 0.148 ; rx_byte[7]                            ; control_Unit:CU|fs_motor:motor|f0     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.500        ; 0.556      ; 0.940      ;
+; 0.148 ; rx_byte[7]                            ; control_Unit:CU|fs_motor:motor|f1     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.500        ; 0.556      ; 0.940      ;
+; 0.586 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|f0     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.446      ;
+; 0.587 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|f1     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.445      ;
+; 0.596 ; rot_en                                ; control_Unit:CU|fs_motor:motor|f0     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.557      ; 0.993      ;
+; 0.596 ; rot_en                                ; control_Unit:CU|fs_motor:motor|f1     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.557      ; 0.993      ;
+; 0.634 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.398      ;
+; 0.634 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|f0     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.398      ;
+; 0.635 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|f1     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.397      ;
+; 0.665 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.000        ; 0.000      ; 0.367      ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                                     ;
++--------+--------------------------------------------------+--------------------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                        ; To Node                                          ; Launch Clock                              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------+--------------------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+; -1.721 ; control_Unit:CU|prescaler:motor_ps|clk_10        ; control_Unit:CU|prescaler:motor_ps|clk_10        ; control_Unit:CU|prescaler:motor_ps|clk_10 ; CLOCK_50    ; 0.000        ; 1.795      ; 0.367      ;
+; -1.221 ; control_Unit:CU|prescaler:motor_ps|clk_10        ; control_Unit:CU|prescaler:motor_ps|clk_10        ; control_Unit:CU|prescaler:motor_ps|clk_10 ; CLOCK_50    ; -0.500       ; 1.795      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|rx_byte_o[0]                   ; SPI_MASTER:spi_tr|rx_byte_o[0]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|rx_byte_o[3]                   ; SPI_MASTER:spi_tr|rx_byte_o[3]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|rx_byte_o[2]                   ; SPI_MASTER:spi_tr|rx_byte_o[2]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|rx_byte_o[1]                   ; SPI_MASTER:spi_tr|rx_byte_o[1]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|rx_byte_o[7]                   ; SPI_MASTER:spi_tr|rx_byte_o[7]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|rx_byte_o[6]                   ; SPI_MASTER:spi_tr|rx_byte_o[6]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|rx_byte_o[4]                   ; SPI_MASTER:spi_tr|rx_byte_o[4]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|rx_byte_o[5]                   ; SPI_MASTER:spi_tr|rx_byte_o[5]                   ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_sclk                         ; SPI_MASTER:spi_tr|r_sclk                         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|r_TX_Byte[11]                  ; SPI_MASTER:spi_tr|r_TX_Byte[11]                  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|mosi_o                         ; SPI_MASTER:spi_tr|mosi_o                         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; SPI_MASTER:spi_tr|cs_o                           ; SPI_MASTER:spi_tr|cs_o                           ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; control_Unit:CU|prescaler:motor_ps|clk_5         ; control_Unit:CU|prescaler:motor_ps|clk_5         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; control_Unit:CU|prescaler:motor_ps|clk_20        ; control_Unit:CU|prescaler:motor_ps|clk_20        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; control_Unit:CU|prescaler:motor_ps|clk_25        ; control_Unit:CU|prescaler:motor_ps|clk_25        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; control_Unit:CU|prescaler:motor_ps|clk_75        ; control_Unit:CU|prescaler:motor_ps|clk_75        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; control_Unit:CU|prescaler:motor_ps|clk_100       ; control_Unit:CU|prescaler:motor_ps|clk_100       ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; control_Unit:CU|prescaler:motor_ps|clk_50        ; control_Unit:CU|prescaler:motor_ps|clk_50        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; control_Unit:CU|prescaler:motor_ps|clk_35        ; control_Unit:CU|prescaler:motor_ps|clk_35        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; rdy_delay                                        ; rdy_delay                                        ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.240  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.392      ;
+; 0.242  ; delay_cnt[3]                                     ; delay_cnt[3]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.394      ;
+; 0.245  ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; control_Unit:CU|prescaler:motor_ps|clock_div[19] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.398      ;
+; 0.255  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.407      ;
+; 0.259  ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.411      ;
+; 0.263  ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.415      ;
+; 0.355  ; SPI_MASTER:spi_tr|r_sclk_Count[9]                ; SPI_MASTER:spi_tr|r_sclk_Count[9]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357  ; SPI_MASTER:spi_tr|r_sclk_Count[10]               ; SPI_MASTER:spi_tr|r_sclk_Count[10]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.509      ;
+; 0.360  ; SPI_MASTER:spi_tr|r_sclk_Edges[0]                ; SPI_MASTER:spi_tr|r_sclk_Edges[0]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361  ; delay_cnt[1]                                     ; delay_cnt[1]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361  ; SPI_MASTER:spi_tr|r_sclk_Edges[1]                ; SPI_MASTER:spi_tr|r_sclk_Edges[1]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361  ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361  ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362  ; SPI_MASTER:spi_tr|r_sclk_Count[11]               ; SPI_MASTER:spi_tr|r_sclk_Count[11]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363  ; SPI_MASTER:spi_tr|r_sclk_Count[7]                ; SPI_MASTER:spi_tr|r_sclk_Count[7]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363  ; SPI_MASTER:spi_tr|r_sclk_Count[6]                ; SPI_MASTER:spi_tr|r_sclk_Count[6]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363  ; control_Unit:CU|prescaler:motor_ps|clock_div[1]  ; control_Unit:CU|prescaler:motor_ps|clock_div[1]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363  ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364  ; SPI_MASTER:spi_tr|r_sclk_Count[2]                ; SPI_MASTER:spi_tr|r_sclk_Count[2]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364  ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364  ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364  ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364  ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364  ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; control_Unit:CU|prescaler:motor_ps|clock_div[17] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365  ; SPI_MASTER:spi_tr|r_sclk_Count[0]                ; SPI_MASTER:spi_tr|r_sclk_Count[0]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.366  ; SPI_MASTER:spi_tr|r_sclk_Count[4]                ; SPI_MASTER:spi_tr|r_sclk_Count[4]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366  ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.518      ;
+; 0.369  ; SPI_MASTER:spi_tr|r_sclk_Count[12]               ; SPI_MASTER:spi_tr|r_sclk_Count[12]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369  ; SPI_MASTER:spi_tr|r_sclk_Count[14]               ; SPI_MASTER:spi_tr|r_sclk_Count[14]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369  ; control_Unit:CU|prescaler:motor_ps|clock_div[0]  ; control_Unit:CU|prescaler:motor_ps|clock_div[0]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369  ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; control_Unit:CU|prescaler:motor_ps|clock_div[18] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370  ; SPI_MASTER:spi_tr|r_sclk_Edges[2]                ; SPI_MASTER:spi_tr|r_sclk_Edges[2]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371  ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; control_Unit:CU|prescaler:motor_ps|clock_div[5]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.374  ; SPI_MASTER:spi_tr|r_sclk_Count[1]                ; SPI_MASTER:spi_tr|r_sclk_Count[1]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375  ; delay_cnt[2]                                     ; delay_cnt[2]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375  ; SPI_MASTER:spi_tr|r_sclk_Count[3]                ; SPI_MASTER:spi_tr|r_sclk_Count[3]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375  ; delay_cnt[0]                                     ; delay_cnt[0]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375  ; SPI_MASTER:spi_tr|r_sclk_Edges[4]                ; SPI_MASTER:spi_tr|r_sclk_Edges[4]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.377  ; control_Unit:CU|prescaler:motor_ps|clock_div[2]  ; control_Unit:CU|prescaler:motor_ps|clock_div[2]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377  ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377  ; SPI_MASTER:spi_tr|r_sclk_Edges[4]                ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.379  ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; control_Unit:CU|prescaler:motor_ps|clock_div[16] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.531      ;
+; 0.379  ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; control_Unit:CU|prescaler:motor_ps|clock_div[6]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.531      ;
+; 0.380  ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.532      ;
+; 0.381  ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.382  ; SPI_MASTER:spi_tr|r_sclk_Edges[3]                ; SPI_MASTER:spi_tr|r_sclk_Edges[3]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.534      ;
+; 0.383  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.535      ;
+; 0.384  ; SPI_MASTER:spi_tr|r_sclk_Edges[4]                ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.536      ;
+; 0.388  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.540      ;
+; 0.390  ; SPI_MASTER:spi_tr|r_sclk_Edges[5]                ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.542      ;
+; 0.394  ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0]              ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.546      ;
+; 0.409  ; SPI_MASTER:spi_tr|r_sclk                         ; SPI_MASTER:spi_tr|sclk_o                         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.002      ; 0.563      ;
+; 0.445  ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1]              ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2]              ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.597      ;
+; 0.452  ; SPI_MASTER:spi_tr|r_Trailing_Edge                ; SPI_MASTER:spi_tr|mosi_o                         ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.604      ;
+; 0.493  ; SPI_MASTER:spi_tr|r_sclk_Count[9]                ; SPI_MASTER:spi_tr|r_sclk_Count[10]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.645      ;
+; 0.495  ; SPI_MASTER:spi_tr|r_sclk_Count[10]               ; SPI_MASTER:spi_tr|r_sclk_Count[11]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.647      ;
+; 0.498  ; SPI_MASTER:spi_tr|r_sclk_Edges[0]                ; SPI_MASTER:spi_tr|r_sclk_Edges[1]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498  ; SPI_MASTER:spi_tr|r_sclk_Count[13]               ; SPI_MASTER:spi_tr|r_sclk_Count[14]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499  ; control_Unit:CU|prescaler:motor_ps|clock_div[7]  ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499  ; control_Unit:CU|prescaler:motor_ps|clock_div[10] ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499  ; SPI_MASTER:spi_tr|r_sclk_Edges[1]                ; SPI_MASTER:spi_tr|r_sclk_Edges[2]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499  ; delay_cnt[1]                                     ; delay_cnt[2]                                     ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.500  ; SPI_MASTER:spi_tr|r_sclk_Count[11]               ; SPI_MASTER:spi_tr|r_sclk_Count[12]               ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.652      ;
+; 0.501  ; SPI_MASTER:spi_tr|r_sclk_Count[6]                ; SPI_MASTER:spi_tr|r_sclk_Count[7]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.653      ;
+; 0.501  ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; control_Unit:CU|prescaler:motor_ps|clock_div[13] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.653      ;
+; 0.502  ; control_Unit:CU|prescaler:motor_ps|clock_div[11] ; control_Unit:CU|prescaler:motor_ps|clock_div[12] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.654      ;
+; 0.502  ; control_Unit:CU|prescaler:motor_ps|clock_div[8]  ; control_Unit:CU|prescaler:motor_ps|clock_div[9]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.654      ;
+; 0.502  ; SPI_MASTER:spi_tr|r_sclk_Count[2]                ; SPI_MASTER:spi_tr|r_sclk_Count[3]                ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.654      ;
+; 0.502  ; control_Unit:CU|prescaler:motor_ps|clock_div[14] ; control_Unit:CU|prescaler:motor_ps|clock_div[15] ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.654      ;
+; 0.504  ; control_Unit:CU|prescaler:motor_ps|clock_div[3]  ; control_Unit:CU|prescaler:motor_ps|clock_div[4]  ; CLOCK_50                                  ; CLOCK_50    ; 0.000        ; 0.000      ; 0.656      ;
++--------+--------------------------------------------------+--------------------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'control_Unit:CU|prescaler:motor_ps|clk_10'                                                                                                                                                           ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                              ; Latch Clock                               ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; 0.215 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.367      ;
+; 0.245 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|f1     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|f0     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; control_Unit:CU|fs_motor:motor|cnt[0] ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.398      ;
+; 0.284 ; rot_en                                ; control_Unit:CU|fs_motor:motor|f0     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.557      ; 0.993      ;
+; 0.284 ; rot_en                                ; control_Unit:CU|fs_motor:motor|f1     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.557      ; 0.993      ;
+; 0.293 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|f1     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.445      ;
+; 0.294 ; control_Unit:CU|fs_motor:motor|cnt[1] ; control_Unit:CU|fs_motor:motor|f0     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 0.000        ; 0.000      ; 0.446      ;
+; 0.732 ; rx_byte[7]                            ; control_Unit:CU|fs_motor:motor|f0     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.500       ; 0.556      ; 0.940      ;
+; 0.732 ; rx_byte[7]                            ; control_Unit:CU|fs_motor:motor|f1     ; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.500       ; 0.556      ; 0.940      ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|cs_o              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|cs_o              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|mosi_o            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|mosi_o            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_Leading_Edge    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_Leading_Edge    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_RX_Bit_Count[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Bit_Count[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Byte[11]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_Byte[11]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_DV           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_TX_DV           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_Trailing_Edge   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_Trailing_Edge   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Count[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|r_sclk_Edges[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_byte_o[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_dv_o           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|rx_dv_o           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|sclk_o            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|sclk_o            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; SPI_MASTER:spi_tr|tx_ready_o        ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'control_Unit:CU|prescaler:motor_ps|clk_10'                                                                                ;
++--------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                                     ; Clock Edge ; Target                                ;
++--------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|cnt[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|cnt[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|cnt[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|cnt[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|f0     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|f0     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|f1     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; control_Unit:CU|fs_motor:motor|f1     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0|datad                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0|datad                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~0|combout            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~0|combout            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~0|datad              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~0|datad              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~2|combout            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~2|combout            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~2|datad              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Fall       ; CU|motor_ps|Mux0~2|datad              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~clkctrl|inclk[0]     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~clkctrl|inclk[0]     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~clkctrl|outclk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|Mux0~clkctrl|outclk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|clk_10|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor_ps|clk_10|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|cnt[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|cnt[0]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|cnt[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|cnt[1]|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|f0|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|f0|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|f1|clk                       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; Rise       ; CU|motor|f1|clk                       ;
++--------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                      ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise  ; Fall  ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 2.204 ; 2.204 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[33] ; CLOCK_50                                  ; 2.204 ; 2.204 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; 2.974 ; 2.974 ; Rise       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; 2.974 ; 2.974 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; 2.672 ; 2.672 ; Fall       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; 2.672 ; 2.672 ; Fall       ; CLOCK_50                                  ;
+; KEY[*]      ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.881 ; 1.881 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  KEY[0]     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 1.881 ; 1.881 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                         ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise   ; Fall   ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; -2.071 ; -2.071 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[33] ; CLOCK_50                                  ; -2.071 ; -2.071 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; -2.190 ; -2.190 ; Rise       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; -2.190 ; -2.190 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; -2.075 ; -2.075 ; Fall       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; -2.075 ; -2.075 ; Fall       ; CLOCK_50                                  ;
+; KEY[*]      ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -1.579 ; -1.579 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  KEY[0]     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -1.579 ; -1.579 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                            ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise  ; Fall  ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 5.073 ; 5.073 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[32] ; CLOCK_50                                  ; 4.592 ; 4.592 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[34] ; CLOCK_50                                  ; 5.073 ; 5.073 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[35] ; CLOCK_50                                  ; 4.590 ; 4.590 ; Rise       ; CLOCK_50                                  ;
+; HEX0[*]     ; CLOCK_50                                  ; 4.798 ; 4.798 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[0]    ; CLOCK_50                                  ; 4.658 ; 4.658 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[1]    ; CLOCK_50                                  ; 4.566 ; 4.566 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[2]    ; CLOCK_50                                  ; 4.798 ; 4.798 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[3]    ; CLOCK_50                                  ; 4.706 ; 4.706 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[4]    ; CLOCK_50                                  ; 4.714 ; 4.714 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[5]    ; CLOCK_50                                  ; 4.732 ; 4.732 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[6]    ; CLOCK_50                                  ; 4.707 ; 4.707 ; Fall       ; CLOCK_50                                  ;
+; HEX1[*]     ; CLOCK_50                                  ; 4.890 ; 4.890 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[0]    ; CLOCK_50                                  ; 4.759 ; 4.759 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[1]    ; CLOCK_50                                  ; 4.721 ; 4.721 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[2]    ; CLOCK_50                                  ; 4.716 ; 4.716 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[3]    ; CLOCK_50                                  ; 4.721 ; 4.721 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[4]    ; CLOCK_50                                  ; 4.740 ; 4.740 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[5]    ; CLOCK_50                                  ; 4.882 ; 4.882 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[6]    ; CLOCK_50                                  ; 4.890 ; 4.890 ; Fall       ; CLOCK_50                                  ;
+; GPIO_1[*]   ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.509 ; 5.509 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[0]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.207 ; 5.207 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[1]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.509 ; 5.509 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[2]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.368 ; 5.368 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[3]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.499 ; 5.499 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                    ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise  ; Fall  ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 4.590 ; 4.590 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[32] ; CLOCK_50                                  ; 4.592 ; 4.592 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[34] ; CLOCK_50                                  ; 5.073 ; 5.073 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[35] ; CLOCK_50                                  ; 4.590 ; 4.590 ; Rise       ; CLOCK_50                                  ;
+; HEX0[*]     ; CLOCK_50                                  ; 4.459 ; 4.459 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[0]    ; CLOCK_50                                  ; 4.572 ; 4.572 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[1]    ; CLOCK_50                                  ; 4.459 ; 4.459 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[2]    ; CLOCK_50                                  ; 4.566 ; 4.566 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[3]    ; CLOCK_50                                  ; 4.596 ; 4.596 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[4]    ; CLOCK_50                                  ; 4.624 ; 4.624 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[5]    ; CLOCK_50                                  ; 4.636 ; 4.636 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[6]    ; CLOCK_50                                  ; 4.475 ; 4.475 ; Fall       ; CLOCK_50                                  ;
+; HEX1[*]     ; CLOCK_50                                  ; 4.570 ; 4.570 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[0]    ; CLOCK_50                                  ; 4.620 ; 4.620 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[1]    ; CLOCK_50                                  ; 4.575 ; 4.575 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[2]    ; CLOCK_50                                  ; 4.570 ; 4.570 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[3]    ; CLOCK_50                                  ; 4.572 ; 4.572 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[4]    ; CLOCK_50                                  ; 4.587 ; 4.587 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[5]    ; CLOCK_50                                  ; 4.743 ; 4.743 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[6]    ; CLOCK_50                                  ; 4.744 ; 4.744 ; Fall       ; CLOCK_50                                  ;
+; GPIO_1[*]   ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.207 ; 5.207 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[0]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.207 ; 5.207 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[1]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.509 ; 5.509 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[2]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.368 ; 5.368 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[3]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.499 ; 5.499 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                       ;
++--------------------------------------------+----------+--------+----------+---------+---------------------+
+; Clock                                      ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------------------------+----------+--------+----------+---------+---------------------+
+; Worst-case Slack                           ; -21.475  ; -2.691 ; N/A      ; N/A     ; -1.631              ;
+;  CLOCK_50                                  ; -21.475  ; -2.691 ; N/A      ; N/A     ; -1.631              ;
+;  control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.023   ; 0.215  ; N/A      ; N/A     ; -0.611              ;
+; Design-wide TNS                            ; -388.951 ; -2.691 ; 0.0      ; 0.0     ; -123.831            ;
+;  CLOCK_50                                  ; -388.905 ; -2.691 ; N/A      ; N/A     ; -118.943            ;
+;  control_Unit:CU|prescaler:motor_ps|clk_10 ; -0.046   ; 0.000  ; N/A      ; N/A     ; -4.888              ;
++--------------------------------------------+----------+--------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                      ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise  ; Fall  ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 4.866 ; 4.866 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[33] ; CLOCK_50                                  ; 4.866 ; 4.866 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; 6.549 ; 6.549 ; Rise       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; 6.549 ; 6.549 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; 5.825 ; 5.825 ; Fall       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; 5.825 ; 5.825 ; Fall       ; CLOCK_50                                  ;
+; KEY[*]      ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 3.438 ; 3.438 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  KEY[0]     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 3.438 ; 3.438 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                         ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise   ; Fall   ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; -2.071 ; -2.071 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[33] ; CLOCK_50                                  ; -2.071 ; -2.071 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; -2.190 ; -2.190 ; Rise       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; -2.190 ; -2.190 ; Rise       ; CLOCK_50                                  ;
+; KEY[*]      ; CLOCK_50                                  ; -2.075 ; -2.075 ; Fall       ; CLOCK_50                                  ;
+;  KEY[0]     ; CLOCK_50                                  ; -2.075 ; -2.075 ; Fall       ; CLOCK_50                                  ;
+; KEY[*]      ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -1.579 ; -1.579 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  KEY[0]     ; control_Unit:CU|prescaler:motor_ps|clk_10 ; -1.579 ; -1.579 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                              ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise   ; Fall   ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 10.054 ; 10.054 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[32] ; CLOCK_50                                  ; 9.092  ; 9.092  ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[34] ; CLOCK_50                                  ; 10.054 ; 10.054 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[35] ; CLOCK_50                                  ; 8.970  ; 8.970  ; Rise       ; CLOCK_50                                  ;
+; HEX0[*]     ; CLOCK_50                                  ; 9.671  ; 9.671  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[0]    ; CLOCK_50                                  ; 9.403  ; 9.403  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[1]    ; CLOCK_50                                  ; 9.128  ; 9.128  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[2]    ; CLOCK_50                                  ; 9.671  ; 9.671  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[3]    ; CLOCK_50                                  ; 9.483  ; 9.483  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[4]    ; CLOCK_50                                  ; 9.493  ; 9.493  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[5]    ; CLOCK_50                                  ; 9.523  ; 9.523  ; Fall       ; CLOCK_50                                  ;
+;  HEX0[6]    ; CLOCK_50                                  ; 9.494  ; 9.494  ; Fall       ; CLOCK_50                                  ;
+; HEX1[*]     ; CLOCK_50                                  ; 9.925  ; 9.925  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[0]    ; CLOCK_50                                  ; 9.558  ; 9.558  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[1]    ; CLOCK_50                                  ; 9.546  ; 9.546  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[2]    ; CLOCK_50                                  ; 9.523  ; 9.523  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[3]    ; CLOCK_50                                  ; 9.538  ; 9.538  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[4]    ; CLOCK_50                                  ; 9.523  ; 9.523  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[5]    ; CLOCK_50                                  ; 9.913  ; 9.913  ; Fall       ; CLOCK_50                                  ;
+;  HEX1[6]    ; CLOCK_50                                  ; 9.925  ; 9.925  ; Fall       ; CLOCK_50                                  ;
+; GPIO_1[*]   ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.642 ; 11.642 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[0]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 10.747 ; 10.747 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[1]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.642 ; 11.642 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[2]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.106 ; 11.106 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[3]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 11.632 ; 11.632 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                    ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; Data Port   ; Clock Port                                ; Rise  ; Fall  ; Clock Edge ; Clock Reference                           ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; GPIO_1[*]   ; CLOCK_50                                  ; 4.590 ; 4.590 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[32] ; CLOCK_50                                  ; 4.592 ; 4.592 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[34] ; CLOCK_50                                  ; 5.073 ; 5.073 ; Rise       ; CLOCK_50                                  ;
+;  GPIO_1[35] ; CLOCK_50                                  ; 4.590 ; 4.590 ; Rise       ; CLOCK_50                                  ;
+; HEX0[*]     ; CLOCK_50                                  ; 4.459 ; 4.459 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[0]    ; CLOCK_50                                  ; 4.572 ; 4.572 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[1]    ; CLOCK_50                                  ; 4.459 ; 4.459 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[2]    ; CLOCK_50                                  ; 4.566 ; 4.566 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[3]    ; CLOCK_50                                  ; 4.596 ; 4.596 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[4]    ; CLOCK_50                                  ; 4.624 ; 4.624 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[5]    ; CLOCK_50                                  ; 4.636 ; 4.636 ; Fall       ; CLOCK_50                                  ;
+;  HEX0[6]    ; CLOCK_50                                  ; 4.475 ; 4.475 ; Fall       ; CLOCK_50                                  ;
+; HEX1[*]     ; CLOCK_50                                  ; 4.570 ; 4.570 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[0]    ; CLOCK_50                                  ; 4.620 ; 4.620 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[1]    ; CLOCK_50                                  ; 4.575 ; 4.575 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[2]    ; CLOCK_50                                  ; 4.570 ; 4.570 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[3]    ; CLOCK_50                                  ; 4.572 ; 4.572 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[4]    ; CLOCK_50                                  ; 4.587 ; 4.587 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[5]    ; CLOCK_50                                  ; 4.743 ; 4.743 ; Fall       ; CLOCK_50                                  ;
+;  HEX1[6]    ; CLOCK_50                                  ; 4.744 ; 4.744 ; Fall       ; CLOCK_50                                  ;
+; GPIO_1[*]   ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.207 ; 5.207 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[0]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.207 ; 5.207 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[1]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.509 ; 5.509 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[2]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.368 ; 5.368 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
+;  GPIO_1[3]  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 5.499 ; 5.499 ; Rise       ; control_Unit:CU|prescaler:motor_ps|clk_10 ;
++-------------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                    ;
++-------------------------------------------+-------------------------------------------+-----------+----------+----------+----------+
+; From Clock                                ; To Clock                                  ; RR Paths  ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------+-------------------------------------------+-----------+----------+----------+----------+
+; CLOCK_50                                  ; CLOCK_50                                  ; 328326621 ; 71       ; 25       ; 1        ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; CLOCK_50                                  ; 1         ; 1        ; 0        ; 0        ;
+; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 2         ; 2        ; 0        ; 0        ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 7         ; 0        ; 0        ; 0        ;
++-------------------------------------------+-------------------------------------------+-----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                     ;
++-------------------------------------------+-------------------------------------------+-----------+----------+----------+----------+
+; From Clock                                ; To Clock                                  ; RR Paths  ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------+-------------------------------------------+-----------+----------+----------+----------+
+; CLOCK_50                                  ; CLOCK_50                                  ; 328326621 ; 71       ; 25       ; 1        ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; CLOCK_50                                  ; 1         ; 1        ; 0        ; 0        ;
+; CLOCK_50                                  ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 2         ; 2        ; 0        ; 0        ;
+; control_Unit:CU|prescaler:motor_ps|clk_10 ; control_Unit:CU|prescaler:motor_ps|clk_10 ; 7         ; 0        ; 0        ; 0        ;
++-------------------------------------------+-------------------------------------------+-----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 106   ; 106  ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 63    ; 63   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jun 10 10:53:59 2021
+Info: Command: quartus_sta crs_prj -c crs_prj
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'crs_prj.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+    Info (332105): create_clock -period 1.000 -name control_Unit:CU|prescaler:motor_ps|clk_10 control_Unit:CU|prescaler:motor_ps|clk_10
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -21.475
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -21.475      -388.905 CLOCK_50 
+    Info (332119):    -0.023        -0.046 control_Unit:CU|prescaler:motor_ps|clk_10 
+Info (332146): Worst-case hold slack is -2.691
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.691        -2.691 CLOCK_50 
+    Info (332119):     0.217         0.000 control_Unit:CU|prescaler:motor_ps|clk_10 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631      -118.943 CLOCK_50 
+    Info (332119):    -0.611        -4.888 control_Unit:CU|prescaler:motor_ps|clk_10 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -7.981
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -7.981      -106.335 CLOCK_50 
+    Info (332119):     0.148         0.000 control_Unit:CU|prescaler:motor_ps|clk_10 
+Info (332146): Worst-case hold slack is -1.721
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.721        -1.721 CLOCK_50 
+    Info (332119):     0.215         0.000 control_Unit:CU|prescaler:motor_ps|clk_10 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -97.380 CLOCK_50 
+    Info (332119):    -0.500        -4.000 control_Unit:CU|prescaler:motor_ps|clk_10 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4555 megabytes
+    Info: Processing ended: Thu Jun 10 10:54:01 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
